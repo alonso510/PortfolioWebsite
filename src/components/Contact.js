@@ -7,6 +7,11 @@ const Contact = () => {
     email: '',
     message: ''
   });
+  const [status, setStatus] = useState({
+    type: '',
+    message: ''
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleChange = (e) => {
     setFormData({
@@ -15,16 +20,39 @@ const Contact = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Handle form submission here
-    console.log('Form submitted:', formData);
-    // Reset form
-    setFormData({
-      name: '',
-      email: '',
-      message: ''
-    });
+    setIsSubmitting(true);
+    setStatus({ type: '', message: '' });
+
+    try {
+      const response = await fetch('http://localhost:5000/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || 'Failed to send message');
+      }
+
+      setStatus({
+        type: 'success',
+        message: 'Message sent successfully!'
+      });
+      setFormData({ name: '', email: '', message: '' });
+    } catch (error) {
+      setStatus({
+        type: 'error',
+        message: error.message || 'Something went wrong. Please try again.'
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -42,6 +70,14 @@ const Contact = () => {
             Have a question or want to work together? Feel free to reach out!
           </p>
         </motion.div>
+
+        {status.message && (
+          <div className={`mb-6 p-4 rounded-lg ${
+            status.type === 'success' ? 'bg-green-500/20 text-green-200' : 'bg-red-500/20 text-red-200'
+          }`}>
+            {status.message}
+          </div>
+        )}
 
         <motion.form
           initial={{ y: 50, opacity: 0 }}
@@ -63,6 +99,7 @@ const Contact = () => {
               onChange={handleChange}
               className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:border-blue-500 transition-colors"
               required
+              disabled={isSubmitting}
             />
           </div>
 
@@ -78,6 +115,7 @@ const Contact = () => {
               onChange={handleChange}
               className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:border-blue-500 transition-colors"
               required
+              disabled={isSubmitting}
             />
           </div>
 
@@ -93,16 +131,18 @@ const Contact = () => {
               rows="5"
               className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:border-blue-500 transition-colors resize-none"
               required
+              disabled={isSubmitting}
             ></textarea>
           </div>
 
           <motion.button
             type="submit"
-            className="w-full px-8 py-3 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors font-serif"
-            whileHover={{ scale: 1.02 }}
-            whileTap={{ scale: 0.98 }}
+            className="w-full px-8 py-3 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors font-serif disabled:opacity-50 disabled:cursor-not-allowed"
+            whileHover={{ scale: isSubmitting ? 1 : 1.02 }}
+            whileTap={{ scale: isSubmitting ? 1 : 0.98 }}
+            disabled={isSubmitting}
           >
-            Send Message
+            {isSubmitting ? 'Sending...' : 'Send Message'}
           </motion.button>
         </motion.form>
       </div>
