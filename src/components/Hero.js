@@ -1,12 +1,9 @@
 import React from 'react';
 import { Link } from 'react-scroll';
 import { motion } from 'framer-motion';
-import MouseFollower from './MouseFollower';
-
 const Hero = () => {
   return (
     <div className="relative min-h-screen bg-gray-900 text-white overflow-hidden">
-      <MouseFollower />
       
       {/* Navigation */}
       <nav className="absolute top-8 left-8 z-40">
@@ -67,6 +64,26 @@ const Hero = () => {
           >
             Data Engineer & Developer
           </motion.p>
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.6, duration: 0.8 }}
+          >
+            <Link
+              to="projects"
+              smooth={true}
+              duration={800}
+              className="inline-block"
+            >
+              <motion.button
+                className="mt-8 px-8 py-3 text-lg font-serif bg-blue-500 text-white rounded-full hover:bg-blue-600 transition-colors"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                Explore My Universe
+              </motion.button>
+            </Link>
+          </motion.div>
         </motion.div>
       </div>
 

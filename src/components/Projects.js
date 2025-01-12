@@ -5,12 +5,11 @@ import ProjectCard from './ProjectCard';
 const Projects = () => {
   const projects = [
     {
-      title: "E-Commerce Platform",
-      description: "A full-stack e-commerce platform with user authentication, payment processing, and order management.",
-      image: "/api/placeholder/800/600",
+      title: "Data Bridge",
+      description: "Engineered an automated ETL pipeline using AWS Lambda, S3, and Redshift Serverless that dynamically processes multi-sheet Excel workbooks into a scalable data warehouse solution. The system features automated schema detection, intelligent error handling, and comprehensive logging, transforming complex Excel data structures into optimized database tables while maintaining data integrity throughout the entire pipeline.",
+      image: "/DataBridge.JPG",
       techStack: ["React", "Node", "MongoDB", "Express"],
-      liveLink: "https://project1.com",
-      githubLink: "https://github.com/yourusername/project1",
+      githubLink: "https://github.com/alonso510/DataBridgeAWS",
       youtubeLink: "https://youtube.com/watch?v=demo1"
     },
     {
@@ -49,7 +48,7 @@ const Projects = () => {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
           {projects.map((project, index) => (
             <ProjectCard key={index} project={project} />
           ))}

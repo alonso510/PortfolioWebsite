@@ -1,14 +1,14 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import TechStack from './TechStack';
+import React from "react";
+import { motion } from "framer-motion";
+import TechStack from "./TechStack";
 
 const About = () => {
   const handleDownloadResume = () => {
     // Replace with your actual resume file path
-    const resumeUrl = '/path-to-your-resume.pdf';
-    const link = document.createElement('a');
+    const resumeUrl = "";
+    const link = document.createElement("a");
     link.href = resumeUrl;
-    link.download = 'YourName-Resume.pdf';
+    link.download = "YourName-Resume.pdf";
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -34,7 +34,7 @@ const About = () => {
           >
             <div className="aspect-square rounded-2xl overflow-hidden">
               <img
-                src="/api/placeholder/500/500"
+                src="PortFolio.JPG"
                 alt="Your Name"
                 className="w-full h-full object-cover"
               />
@@ -49,12 +49,8 @@ const About = () => {
             viewport={{ once: true }}
           >
             <h2 className="text-4xl font-serif font-bold mb-6">About Me</h2>
-            <p className="text-lg text-gray-300 mb-6">
-              I'm a passionate developer with a deep love for creating beautiful and functional web applications. With experience in both frontend and backend development, I bring ideas to life through clean, efficient code and intuitive user experiences.
-            </p>
-            <p className="text-lg text-gray-300 mb-8">
-              When I'm not coding, you can find me exploring new technologies, contributing to open-source projects, or sharing my knowledge through technical writing and mentoring.
-            </p>
+            <p className="text-lg text-gray-300 mb-6">hello </p>
+            <p className="text-lg text-gray-300 mb-8">text ab me Here</p>
             <motion.button
               onClick={handleDownloadResume}
               className="px-8 py-3 bg-blue-500 text-white rounded-full hover:bg-blue-600 transition-colors font-serif"
@@ -74,7 +70,9 @@ const About = () => {
           viewport={{ once: true }}
           className="mt-20"
         >
-          <h2 className="text-3xl font-serif font-bold mb-8 text-center">Technical Expertise</h2>
+          <h2 className="text-3xl font-serif font-bold mb-8 text-center">
+            Technical Expertise
+          </h2>
           <TechStack />
         </motion.div>
       </div>
