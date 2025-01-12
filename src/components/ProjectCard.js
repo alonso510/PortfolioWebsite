@@ -1,7 +1,18 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FaGithub, FaYoutube, FaExternalLinkAlt, FaChevronDown, FaChevronUp } from 'react-icons/fa';
-import { SiReact, SiTailwindcss, SiNodedotjs, SiMongodb, SiExpress, SiPostgresql } from 'react-icons/si';
+import { 
+  SiReact, 
+  SiTailwindcss, 
+  SiNodedotjs, 
+  SiMongodb, 
+  SiExpress, 
+  SiPostgresql,
+  SiAmazonwebservices,
+  SiPython,
+  SiAmazon,
+  SiVite
+} from 'react-icons/si';
 
 const ProjectCard = ({ project }) => {
   const [isExpanded, setIsExpanded] = useState(false);
@@ -15,6 +26,11 @@ const ProjectCard = ({ project }) => {
       case 'mongodb': return <SiMongodb {...iconProps} />;
       case 'express': return <SiExpress {...iconProps} />;
       case 'postgresql': return <SiPostgresql {...iconProps} />;
+      case 'aws': return <SiAmazonwebservices {...iconProps} />;
+      case 'python': return <SiPython {...iconProps} />;
+      case 'redshift': return <SiAmazon {...iconProps} />;
+      case 's3': return <SiAmazon {...iconProps} />;
+      case 'vite': return <SiVite {...iconProps} />;
       default: return null;
     }
   };
@@ -32,7 +48,7 @@ const ProjectCard = ({ project }) => {
         <img
           src={project.image}
           alt={project.title}
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
         />
       </div>
 
@@ -88,30 +104,36 @@ const ProjectCard = ({ project }) => {
 
         {/* Links */}
         <div className="flex gap-4 pt-4 border-t border-gray-700">
-          <a
-            href={project.liveLink}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-2 text-blue-400 hover:text-blue-300 transition-colors"
-          >
-            <FaExternalLinkAlt /> Live
-          </a>
-          <a
-            href={project.githubLink}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-2 text-blue-400 hover:text-blue-300 transition-colors"
-          >
-            <FaGithub /> Code
-          </a>
-          <a
-            href={project.youtubeLink}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-2 text-blue-400 hover:text-blue-300 transition-colors"
-          >
-            <FaYoutube /> Demo
-          </a>
+          {project.liveLink && (
+            <a
+              href={project.liveLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 text-blue-400 hover:text-blue-300 transition-colors"
+            >
+              <FaExternalLinkAlt /> Live
+            </a>
+          )}
+          {project.githubLink && (
+            <a
+              href={project.githubLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 text-blue-400 hover:text-blue-300 transition-colors"
+            >
+              <FaGithub /> Code
+            </a>
+          )}
+          {project.youtubeLink && (
+            <a
+              href={project.youtubeLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 text-blue-400 hover:text-blue-300 transition-colors"
+            >
+              <FaYoutube /> Demo
+            </a>
+          )}
         </div>
       </div>
     </motion.div>

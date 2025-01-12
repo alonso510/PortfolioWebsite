@@ -8,7 +8,7 @@ const Projects = () => {
       title: "Data Bridge",
       description: "Engineered an automated ETL pipeline using AWS Lambda, S3, and Redshift Serverless that dynamically processes multi-sheet Excel workbooks into a scalable data warehouse solution. The system features automated schema detection, intelligent error handling, and comprehensive logging, transforming complex Excel data structures into optimized database tables while maintaining data integrity throughout the entire pipeline.",
       image: "/DataBridge.JPG",
-      techStack: ["React", "Node", "MongoDB", "Express"],
+      techStack: ["AWS", "Python",  "Vite"],
       githubLink: "https://github.com/alonso510/DataBridgeAWS",
       youtubeLink: "https://youtube.com/watch?v=demo1"
     },
