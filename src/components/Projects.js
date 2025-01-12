@@ -34,11 +34,10 @@ const Projects = () => {
     },
     {
       title: "Synthe Summary",
-      description: "Collaborative task management application with real-time updates and team features.",
-      image: "/api/placeholder/800/600",
-      techStack: ["React", "Node", "MongoDB", "Express"],
-      liveLink: "https://project3.com",
-      githubLink: "https://github.com/yourusername/project3",
+      description: "Developed a sophisticated Natural Language Processing (NLP) application that implements state-of-the-art transformer architecture for intelligent document summarization. The system leverages the BART-large-CNN model to perform extractive and abstractive summarization, achieving up to 70% text reduction while maintaining semantic integrity.Developed a full-stack web application that leverages AI to automatically generate concise summaries from text and PDF documents. Built with Python/Flask and modern web technologies, SyntheSummary helps users quickly extract key information from lengthy documents.",
+      image: "/Synthe_Summary_Portfolio.png",
+      techStack: ["Python", "HTML", "JavaScript", "Tailwind"],
+      githubLink: "https://github.com/alonso510/capstone",
       youtubeLink: "https://youtube.com/watch?v=demo3"
     }
   ];

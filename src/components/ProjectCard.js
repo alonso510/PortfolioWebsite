@@ -11,25 +11,46 @@ import {
   SiAmazonwebservices,
   SiPython,
   SiAmazon,
-  SiVite
+  SiVite,
+  SiHtml5,
+  SiJavascript,
+  SiCss3
 } from 'react-icons/si';
 
 const ProjectCard = ({ project, isExpanded, onToggle }) => {
   const getTechIcon = (tech) => {
     const iconProps = { className: "w-6 h-6", title: tech };
     switch (tech.toLowerCase()) {
-      case 'react': return <SiReact {...iconProps} />;
-      case 'tailwind': return <SiTailwindcss {...iconProps} />;
-      case 'node': return <SiNodedotjs {...iconProps} />;
-      case 'mongodb': return <SiMongodb {...iconProps} />;
-      case 'express': return <SiExpress {...iconProps} />;
-      case 'postgresql': return <SiPostgresql {...iconProps} />;
-      case 'aws': return <SiAmazonwebservices {...iconProps} />;
-      case 'python': return <SiPython {...iconProps} />;
-      case 'redshift': return <SiAmazon {...iconProps} />;
-      case 's3': return <SiAmazon {...iconProps} />;
-      case 'vite': return <SiVite {...iconProps} />;
-      default: return null;
+      case 'react': 
+        return <SiReact {...iconProps} style={{ color: '#61DAFB' }} />; // React blue
+      case 'tailwind': 
+        return <SiTailwindcss {...iconProps} style={{ color: '#38B2AC' }} />; // Tailwind teal
+      case 'node': 
+        return <SiNodedotjs {...iconProps} style={{ color: '#339933' }} />; // Node green
+      case 'mongodb': 
+        return <SiMongodb {...iconProps} style={{ color: '#47A248' }} />; // MongoDB green
+      case 'express': 
+        return <SiExpress {...iconProps} style={{ color: '#000000' }} />; // Express black
+      case 'postgresql': 
+        return <SiPostgresql {...iconProps} style={{ color: '#336791' }} />; // PostgreSQL blue
+      case 'aws': 
+        return <SiAmazonwebservices {...iconProps} style={{ color: '#FF9900' }} />; // AWS orange
+      case 'python': 
+        return <SiPython {...iconProps} style={{ color: '#3776AB' }} />; // Python blue
+      case 'redshift': 
+        return <SiAmazon {...iconProps} style={{ color: '#FF9900' }} />; // Amazon orange
+      case 's3': 
+        return <SiAmazon {...iconProps} style={{ color: '#569A31' }} />; // S3 green
+      case 'vite': 
+        return <SiVite {...iconProps} style={{ color: '#646CFF' }} />; // Vite purple
+      case 'html': 
+        return <SiHtml5 {...iconProps} style={{ color: '#E34F26' }} />; // HTML orange
+      case 'javascript': case 'js': 
+        return <SiJavascript {...iconProps} style={{ color: '#F7DF1E' }} />; // JavaScript yellow
+      case 'css': 
+        return <SiCss3 {...iconProps} style={{ color: '#1572B6' }} />; // CSS blue
+      default: 
+        return null;
     }
   };
 
