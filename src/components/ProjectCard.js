@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FaGithub, FaYoutube, FaExternalLinkAlt, FaChevronDown, FaChevronUp } from 'react-icons/fa';
 import { 
@@ -14,9 +14,7 @@ import {
   SiVite
 } from 'react-icons/si';
 
-const ProjectCard = ({ project }) => {
-  const [isExpanded, setIsExpanded] = useState(false);
-
+const ProjectCard = ({ project, isExpanded, onToggle }) => {
   const getTechIcon = (tech) => {
     const iconProps = { className: "w-6 h-6", title: tech };
     switch (tech.toLowerCase()) {
@@ -74,7 +72,7 @@ const ProjectCard = ({ project }) => {
 
           {/* Read More Button */}
           <button
-            onClick={() => setIsExpanded(!isExpanded)}
+            onClick={onToggle}
             className="flex items-center gap-2 text-blue-400 hover:text-blue-300 transition-colors"
           >
             {isExpanded ? (

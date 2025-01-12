@@ -1,28 +1,39 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import ProjectCard from './ProjectCard';
+import { useState } from 'react';
 
 const Projects = () => {
+  const [expandedCards, setExpandedCards] = useState({});
+
+  const toggleCard = (index) => {
+    setExpandedCards(prev => ({
+      ...prev,
+      [index]: !prev[index]
+    }));
+  };
+
+
   const projects = [
     {
       title: "Data Bridge",
       description: "Engineered an automated ETL pipeline using AWS Lambda, S3, and Redshift Serverless that dynamically processes multi-sheet Excel workbooks into a scalable data warehouse solution. The system features automated schema detection, intelligent error handling, and comprehensive logging, transforming complex Excel data structures into optimized database tables while maintaining data integrity throughout the entire pipeline.",
       image: "/DataBridge.JPG",
-      techStack: ["AWS", "Python",  "Vite"],
+      techStack: ["AWS", "Python",  "Vite", "TailWind"],
       githubLink: "https://github.com/alonso510/DataBridgeAWS",
       youtubeLink: "https://youtube.com/watch?v=demo1"
     },
     {
-      title: "Social Media Dashboard",
-      description: "Real-time social media analytics dashboard with data visualization and reporting features.",
-      image: "/api/placeholder/800/600",
+      title: "Wrapped+",
+      description: "Engineered a full-stack Spotify analytics dashboard leveraging React.js, Node.js, and OAuth 2.0 authentication to process and visualize complex user listening patterns through interactive data visualizations using Recharts and custom algorithms. Implemented advanced features including temporal analysis, genre diversity tracking, and music evolution patterns while utilizing modern web development practices such as custom React hooks, RESTful API integration with batch processing, and component-driven architecture with Tailwind CSS for a responsive, dynamic user interface.",
+      image: "/Wrapped_Portfolio.JPG",
       techStack: ["React", "Tailwind", "Node", "PostgreSQL"],
       liveLink: "https://project2.com",
-      githubLink: "https://github.com/yourusername/project2",
+      githubLink: "https://github.com/alonso510/Wrapped-",
       youtubeLink: "https://youtube.com/watch?v=demo2"
     },
     {
-      title: "Task Management App",
+      title: "Synthe Summary",
       description: "Collaborative task management application with real-time updates and team features.",
       image: "/api/placeholder/800/600",
       techStack: ["React", "Node", "MongoDB", "Express"],
@@ -48,9 +59,14 @@ const Projects = () => {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, index) => (
-            <ProjectCard key={index} project={project} />
+            <ProjectCard 
+              key={index} 
+              project={project} 
+              isExpanded={expandedCards[index] || false}
+              onToggle={() => toggleCard(index)}
+            />
           ))}
         </div>
       </div>
