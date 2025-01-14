@@ -38,7 +38,7 @@ const Projects = () => {
       image: "/Synthe_Summary_Portfolio.png",
       techStack: ["Python", "HTML", "JavaScript", "Tailwind"],
       githubLink: "https://github.com/alonso510/capstone",
-      youtubeLink: "https://youtube.com/watch?v=demo3"
+      youtubeLink: "https://www.youtube.com/watch?v=w9wNKYuoZUo"
     }
   ];
 
