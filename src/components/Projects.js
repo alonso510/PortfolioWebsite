@@ -30,7 +30,7 @@ const Projects = () => {
       techStack: ["React", "Tailwind", "Node", "PostgreSQL"],
       liveLink: "https://project2.com",
       githubLink: "https://github.com/alonso510/Wrapped-",
-      youtubeLink: "https://youtube.com/watch?v=demo2"
+      youtubeLink: "https://www.youtube.com/watch?v=ueLAjEzzrIg"
     },
     {
       title: "Synthe Summary",
