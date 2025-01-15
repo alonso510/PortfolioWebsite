@@ -24,6 +24,8 @@ const About = () => {
           viewport={{ once: true }}
           className="grid md:grid-cols-2 gap-12 items-center"
         >
+
+
           {/* Image Section */}
           <motion.div
             initial={{ x: -100, opacity: 0 }}

@@ -1,42 +1,55 @@
 import React from 'react';
-import { Link } from 'react-scroll';
+import { Link as ScrollLink } from 'react-scroll'; // Changed import
 import { motion } from 'framer-motion';
+
+
 const Hero = () => {
+  const handleClickScroll = () => {
+    console.log('Scroll button clicked'); // Debug log
+  };
+
   return (
     <div className="relative min-h-screen bg-gray-900 text-white overflow-hidden">
+      
       
       {/* Navigation */}
       <nav className="absolute top-8 left-8 z-40">
         <ul className="flex space-x-8">
           <li>
-            <Link
+            <ScrollLink
               to="about"
               smooth={true}
               duration={500}
+              spy={true}
+              offset={-70}
               className="text-lg font-serif hover:text-blue-400 cursor-pointer transition-colors"
             >
               About
-            </Link>
+            </ScrollLink>
           </li>
           <li>
-            <Link
+            <ScrollLink
               to="projects"
               smooth={true}
               duration={500}
+              spy={true}
+              offset={-70}
               className="text-lg font-serif hover:text-blue-400 cursor-pointer transition-colors"
             >
               Projects
-            </Link>
+            </ScrollLink>
           </li>
           <li>
-            <Link
+            <ScrollLink
               to="contact"
               smooth={true}
               duration={500}
+              spy={true}
+              offset={-70}
               className="text-lg font-serif hover:text-blue-400 cursor-pointer transition-colors"
             >
               Contact
-            </Link>
+            </ScrollLink>
           </li>
         </ul>
       </nav>
@@ -54,7 +67,7 @@ const Hero = () => {
             whileHover={{ scale: 1.05 }}
             transition={{ type: "spring", stiffness: 300 }}
           >
-            Jose Alonso Nunez
+            Your Name
           </motion.h1>
           <motion.p 
             className="text-xl md:text-2xl text-gray-300"
@@ -62,18 +75,21 @@ const Hero = () => {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.3, duration: 0.8 }}
           >
-            Data Engineer & Developer
+            Web Developer & Designer
           </motion.p>
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.6, duration: 0.8 }}
           >
-            <Link
+            <ScrollLink
               to="projects"
               smooth={true}
               duration={800}
-              className="inline-block"
+              spy={true}
+              offset={-70}
+              className="inline-block cursor-pointer"
+              onClick={handleClickScroll}
             >
               <motion.button
                 className="mt-8 px-8 py-3 text-lg font-serif bg-blue-500 text-white rounded-full hover:bg-blue-600 transition-colors"
@@ -82,7 +98,7 @@ const Hero = () => {
               >
                 Explore My Universe
               </motion.button>
-            </Link>
+            </ScrollLink>
           </motion.div>
         </motion.div>
       </div>
