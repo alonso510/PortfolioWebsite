@@ -4,9 +4,7 @@ import { motion } from 'framer-motion';
 
 
 const Hero = () => {
-  const handleClickScroll = () => {
-    console.log('Scroll button clicked'); // Debug log
-  };
+
 
   return (
     <div className="relative min-h-screen bg-gray-900 text-white overflow-hidden">
@@ -67,7 +65,7 @@ const Hero = () => {
             whileHover={{ scale: 1.05 }}
             transition={{ type: "spring", stiffness: 300 }}
           >
-            Your Name
+            Alonso Nunez
           </motion.h1>
           <motion.p 
             className="text-xl md:text-2xl text-gray-300"
@@ -82,23 +80,6 @@ const Hero = () => {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.6, duration: 0.8 }}
           >
-            <ScrollLink
-              to="projects"
-              smooth={true}
-              duration={800}
-              spy={true}
-              offset={-70}
-              className="inline-block cursor-pointer"
-              onClick={handleClickScroll}
-            >
-              <motion.button
-                className="mt-8 px-8 py-3 text-lg font-serif bg-blue-500 text-white rounded-full hover:bg-blue-600 transition-colors"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                Explore My Universe
-              </motion.button>
-            </ScrollLink>
           </motion.div>
         </motion.div>
       </div>

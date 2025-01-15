@@ -3,15 +3,15 @@ import { motion } from 'framer-motion';
 
 const TechStack = () => {
   const technologies = [
-    { name: 'React', category: 'Frontend' },
-    { name: 'JavaScript', category: 'Language' },
-    { name: 'Node.js', category: 'Backend' },
     { name: 'Python', category: 'Language' },
-    { name: 'TypeScript', category: 'Language' },
-    { name: 'MongoDB', category: 'Database' },
-    { name: 'SQL', category: 'Database' },
-    { name: 'Git', category: 'Tools' },
+    {name: 'R', category: 'Data Science'},
+    {name: 'C++', category: 'Language'},
     { name: 'AWS', category: 'Cloud' },
+    { name: 'SQL', category: 'Database' },
+    { name: 'MongoDB', category: 'Database' },
+    { name: 'Git', category: 'Tools' },
+    { name: 'Node.js', category: 'Backend' },
+    { name: 'React', category: 'Frontend' },
     { name: 'Docker', category: 'DevOps' },
   ];
 
