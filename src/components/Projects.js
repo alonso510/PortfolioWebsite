@@ -21,14 +21,13 @@ const Projects = () => {
       image: "/DataBridge.JPG",
       techStack: ["AWS", "Python",  "Vite", "TailWind"],
       githubLink: "https://github.com/alonso510/DataBridgeAWS",
-      youtubeLink: "https://youtube.com/watch?v=demo1"
+      youtubeLink: "https://www.youtube.com/watch?v=ejaUynCNHBI"
     },
     {
       title: "Wrapped+",
       description: "Engineered a full-stack Spotify analytics dashboard leveraging React.js, Node.js, and OAuth 2.0 authentication to process and visualize complex user listening patterns through interactive data visualizations using Recharts and custom algorithms. Implemented advanced features including temporal analysis, genre diversity tracking, and music evolution patterns while utilizing modern web development practices such as custom React hooks, RESTful API integration with batch processing, and component-driven architecture with Tailwind CSS for a responsive, dynamic user interface.",
       image: "/Wrapped_Portfolio.JPG",
       techStack: ["React", "Tailwind", "Node", "PostgreSQL"],
-      liveLink: "https://project2.com",
       githubLink: "https://github.com/alonso510/Wrapped-",
       youtubeLink: "https://www.youtube.com/watch?v=ueLAjEzzrIg"
     },

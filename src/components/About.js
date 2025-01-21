@@ -36,7 +36,7 @@ const About = () => {
           >
             <div className="aspect-square rounded-2xl overflow-hidden">
               <img
-                src="PortFolio.JPG"
+                src="Portfo_Pic.jpg"
                 alt="Your Name"
                 className="w-full h-full object-cover"
               />
@@ -51,8 +51,12 @@ const About = () => {
             viewport={{ once: true }}
           >
             <h2 className="text-4xl font-serif font-bold mb-6">About Me</h2>
-            <p className="text-lg text-gray-300 mb-6">hello </p>
-            <p className="text-lg text-gray-300 mb-8">text ab me Here</p>
+            <p className="text-lg text-gray-300 mb-6">
+              Hey there! I'm a Data Engineer & Developer with a passion for turning complex data challenges into elegant solutions. Born and raised in Richmond, Bay Area, as a first-generation tech enthusiast, I've carried my innovative spirit from California's tech hub to the dynamic scene of Nashville, where I earned my Bachelor's of Applied Sciences in Data Science from Middle Tennessee State University.
+            </p>
+            <p className="text-lg text-gray-300 mb-8">
+              What drives me? I'm deeply passionate about Data Analysis and Data Engineering, finding joy in transforming raw data into actionable insights. My goal is simple yet ambitious: to harness the power of data to create tangible solutions that make a real difference in people's lives. When I'm not diving into datasets or crafting efficient pipelines, you'll find me on the soccer field - whether playing or cheering from the sidelines. It's this balance of analytical thinking and dynamic teamwork that defines both my professional and personal life.
+            </p>
             <motion.button
               onClick={handleDownloadResume}
               className="px-8 py-3 bg-blue-500 text-white rounded-full hover:bg-blue-600 transition-colors font-serif"
