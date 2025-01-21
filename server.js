@@ -11,7 +11,8 @@ app.use(cors());
 app.use(express.json());
 
 // Serve static files from React build
-app.use(express.static(path.join(__dirname, '../src/build')));
+const buildPath = path.join(__dirname, 'client/build');
+app.use(express.static(buildPath));
 
 // Email transporter configuration
 const transporter = nodemailer.createTransport({
@@ -74,11 +75,11 @@ app.get('/api/health', (req, res) => {
 
 // Handle React routing, return all requests to React app
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '../src/build', 'index.html'));
+  res.sendFile(path.join(buildPath, 'index.html'));
 });
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
-  console.log(`Serving static files from: ${path.join(__dirname, '../src/build')}`);
+  console.log(`Serving static files from: ${buildPath}`);
 });

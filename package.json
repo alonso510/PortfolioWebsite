@@ -1,18 +1,11 @@
 {
   "name": "portfolio-fullstack",
   "version": "1.0.0",
-  "engines": {
-    "node": "18.x",
-    "npm": "10.x"
-  },
   "scripts": {
-    "start": "node backend/server.js",
-    "heroku-postbuild": "cd src && npm install --legacy-peer-deps && npm run build",
-    "dev": "concurrently \"nodemon backend/server.js\" \"cd src && npm start\"",
-    "build": "cd src && npm run build",
-    "test": "cd src && npm test"
+    "start": "node server.js",
+    "dev": "concurrently \"nodemon server.js\" \"cd client && npm start\"",
+    "heroku-postbuild": "cd client && npm install && npm run build"
   },
-  "cacheDirectories": ["src/node_modules"],
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^16.4.7",
