@@ -5,10 +5,10 @@ import TechStack from "./TechStack";
 const About = () => {
   const handleDownloadResume = () => {
     // Replace with your actual resume file path
-    const resumeUrl = "";
+    const resumeUrl = "/Alonso_Nunez_Resume.pdf";
     const link = document.createElement("a");
     link.href = resumeUrl;
-    link.download = "YourName-Resume.pdf";
+    link.download = "AlonsoNunez_resume.pdf";
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
