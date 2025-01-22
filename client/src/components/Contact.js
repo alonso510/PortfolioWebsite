@@ -26,8 +26,9 @@ const Contact = () => {
     setStatus({ type: '', message: '' });
 
     try {
-      // Replace with your actual backend endpoint
-      const response = await fetch('http://localhost:5000/api/contact', {
+      // Use relative URL in production, full URL in development
+      const url = '/api/contact';
+      const response = await fetch(url, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
